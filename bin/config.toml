@@ -1,0 +1,5 @@
+[flarum]
+uri = "http://discuss.flarum.org"
+
+[server]
+cache-duration = 600

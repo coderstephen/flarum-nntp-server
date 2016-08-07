@@ -1,0 +1,33 @@
+{
+    "name": "coderstephen/flarum-nntp-server",
+    "type": "project",
+    "description": "Server that provides an NNTP interface to Flarum",
+    "keywords": ["flarum", "nntp"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stephen Coakley",
+            "email": "me@stephencoakley.com",
+            "homepage": "http://stephencoakley.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "coderstephen/libnntp": "*",
+        "icicleio/cache": "~2.0",
+        "icicleio/http": "~2.0",
+        "yosymfony/toml": "0.4.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "coderstephen\\flarum\\nntpServer\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../libnntp"
+        }
+    ]
+}

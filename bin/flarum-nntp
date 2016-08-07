@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+use coderstephen\flarum\nntpServer;
+use nntp\server;
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+
+$config = nntpServer\Config::load(__DIR__ . '/config.toml');
+
+$flarum = new nntpServer\FlarumAccess(
+    $config->getFlarumUri(),
+    $config->getCacheDuration()
+);
+$accessLayer = new nntpServer\NntpAdapter($flarum);
+
+$server = new server\Server($accessLayer);
+$server->listen(1190);
+
+Icicle\Loop\run();
